@@ -1,6 +1,12 @@
 # Drug-Drug-Interaction-Classification
 Drug to Drug Interaction Classifier
 
-An innovative approach was developed to address a crucial challenge in drug-drug interaction research. While existing state of the art link prediction models rely on prior knowledge of a drug's interaction with other drugs, our solution utilizes the CatBoost to classify potential interactions based solely on intrinsic properties.
+Our solution utilizes CatBoost and link prediction to classify predict drug-drug interactions in the absence of information about each individual drug's other interactions. CatBoost predicts whether pairs of drugs interact, and we use these predictions as adjacency matrix entries for link prediction. 
 
-We developed a new method for predicting drug interactions using the CatBoost algorithm that relies solely on intrinsic properties, rather than prior knowledge of a drug's interactions. We achieved a high accuracy of 0.85 and an AUC-ROC score of 0.86. This breakthrough provides a more efficient and cost-effective approach to predicting drug interactions, particularly for new drugs without prior interaction data.
+This method appears to slighly outperform standalone CatBoost.
+
+# Code
+
+parse.ipynb contains the code for collecting features from the DrugBank database and saving them as a csv.
+The catboost folder contains all the code we used to train our CatBoost model.
+link_prediction.ipynb contains the code for evaluating standalone link prediction, standalone CatBoost, and our stacked model.
